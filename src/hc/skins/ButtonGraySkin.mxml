@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" minWidth="70">
+	<fx:Metadata><![CDATA[
+        [HostComponent("spark.components.Button")]
+    ]]></fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect height="25" radiusX="3" width="100%" x="0.5" y="0.5" alpha.disabled="0.5">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#AFAFAF" joints="miter" miterLimit="4" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry alpha="1.0" color="#FFFFFF" ratio="0.00784313725490196"/>
+				<s:GradientEntry alpha="1.0" color="#F9F9F9" ratio="0.10980392156862745" color.over="#FCFCFC" color.down="#E8E8E8"/>
+				<s:GradientEntry alpha="1.0" color="#D7D7D7" ratio="1" color.over="#EEEEEE" color.down="#FEFEFE"/>
+			</s:LinearGradient>
+		</s:fill>
+	</s:Rect>
+	<!--<s:BitmapImage id="iconDisplay" verticalAlign="middle" left="5" width="16" height="16" verticalCenter="0"/>-->
+	<s:RichText color="#333333" id="labelDisplay" tabStops="S0 S50" text="" 
+				textAlign="center" verticalAlign="middle" left="1" top="1" right="1" bottom="1" alpha.disabled="0.5" />
+</s:Skin>

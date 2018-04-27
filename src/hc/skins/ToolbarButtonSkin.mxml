@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"  minWidth="60" minHeight="24">
+	<fx:Metadata><![CDATA[
+		[HostComponent("spark.components.Button")]
+	]]></fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			/**
+			 *  @private
+			 */
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				var color:uint = getStyle("color") as uint;
+				labelDisplay.setStyle("color",color);
+			}
+			
+		]]>
+	</fx:Script>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect height="25" includeIn="up" radiusX="3" width="100%" x="0.5" y="0.5" alpha="0">
+		
+	</s:Rect>
+	
+	<s:Rect height="25" includeIn="over" radiusX="3" width="100%" x="0.5" y="0.5">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#AFAFAF" joints="miter" miterLimit="4" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry alpha="1.0" color="#FFFFFF" ratio="0.00784313725490196"/>
+				<s:GradientEntry alpha="1.0" color="#F9F9F9" ratio="0.10980392156862745" color.over="#FCFCFC" color.down="#E8E8E8"/>
+				<s:GradientEntry alpha="1.0" color="#D7D7D7" ratio="1" color.over="#EEEEEE" color.down="#FEFEFE"/>
+			</s:LinearGradient>
+		</s:fill>
+	</s:Rect>
+	<s:Rect height="25" includeIn="down" radiusX="3" width="100%" x="0.5" y="0.5">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#AFAFAF" joints="miter" miterLimit="4" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry alpha="1.0" color="#FFFFFF" ratio="0.00784313725490196"/>
+				<s:GradientEntry alpha="1.0" color="#F9F9F9" ratio="0.10980392156862745" color.over="#FCFCFC" color.down="#E8E8E8"/>
+				<s:GradientEntry alpha="1.0" color="#D7D7D7" ratio="1" color.over="#EEEEEE" color.down="#FEFEFE"/>
+			</s:LinearGradient>
+		</s:fill>
+	</s:Rect>
+	<s:BitmapImage id="iconDisplay" left="5" verticalCenter="0" alpha.disabled="0.2"/>
+	<s:RichText color="#333333" id="labelDisplay" verticalAlign="middle" textAlign="left"
+				left="24" right="5" height="100%" alpha.disabled="0.2" />
+</s:Skin>

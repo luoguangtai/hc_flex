@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<design version="2">
+	<namespaces>
+		<namespace prefix="hc" uri="http://flex.hc.org" />
+	</namespaces>
+	<categories>
+		<category id="hcComponents" label="hc控件" defaultExpand="true"/>
+		<category id="hcForm" label="hc表单"/>
+		<category id="hcToolbar" label="hc工具条" />
+		<category id="hcActionButton" label="hc按钮" />
+		<category id="hcDataGrid" label="hc表格" />
+	</categories>
+
+	<components>
+		<!-- hcComponents -->
+		<component name="hc.components.Button" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.ImageButton" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.FieldSet" category="hcComponents" namespace="hc"/>
+		<component name="hc.flexiframe.IFrame" category="hcComponents" namespace="hc"/>
+
+		<!-- hcForm -->
+		<component name="hc.components.form.Hidden" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.TextInput" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.DateField" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.ComboBox" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.RadioButton" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.CheckBox" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.CheckBoxGroup" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.RadioButtonGroup" category="hcComponents" namespace="hc"/>
+		<component name="hc.components.form.NumericStepper" category="hcComponents" namespace="hc"/>
+		
+		<!-- hcToolbar -->
+		<component name="hc.components.toolbar.Toolbar" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.ToolbarButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.AddButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.AuditButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.BaseButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.CancelButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.DeleteButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.DetailButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.EditButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.ExportButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.ImportButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.InvalidButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.IssueButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.PrintButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.PrintPreviewButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.QueryButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.RefreshButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.ReportButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.SaveButton" category="hcToolbar" namespace="hc"/>
+		<component name="hc.components.toolbar.SettingButton" category="hcToolbar" namespace="hc"/>
+		
+		<!-- actionButton -->
+		<component name="hc.components.actionButton.PrimaryButton" category="hcActionButton" namespace="hc"/>
+		<component name="hc.components.actionButton.WarningButton" category="hcActionButton" namespace="hc"/>
+		<component name="hc.components.actionButton.AccessoryButton" category="hcActionButton" namespace="hc"/>
+		
+		<!-- datagrid -->
+		<component name="hc.components.datagrid.PageBar" category="hcDataGrid" namespace="hc"/>
+		<component name="hc.components.datagrid.SelectColumn" category="hcDataGrid" namespace="hc"/>
+	</components>
+</design>

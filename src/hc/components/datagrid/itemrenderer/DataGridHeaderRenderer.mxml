@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							 xmlns:s="library://ns.adobe.com/flex/spark" 
+							 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="30" >
+	<fx:Script>
+		<![CDATA[
+			import hc.util.Util;
+			
+			import spark.components.gridClasses.GridColumn;
+			import spark.skins.spark.DefaultGridHeaderRenderer;
+			
+			override public function set column(value:GridColumn):void
+			{
+				super.column = value;
+				if(column.editable && column.grid.dataGrid.editable){
+					labelDisplay.text = '*' + value.headerText;
+				}
+				else{
+					labelDisplay.text = value.headerText;
+				}
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Group  width="100%" height="100%" horizontalCenter="0" verticalCenter="0">
+		<s:Rect height="100%"  width="100%">
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#dce7f1" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#e6eef4" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+		<s:Label x="0" y="0" id="labelDisplay" color="#4f5555" horizontalCenter="0" verticalCenter="0" fontSize="13" fontWeight="bold"/>
+	</s:Group>
+</s:GridItemRenderer>

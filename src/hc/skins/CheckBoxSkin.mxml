@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark">
+	<fx:Metadata><![CDATA[
+		[HostComponent("spark.components.CheckBox")]
+	]]></fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+		<s:State name="upAndSelected"/>
+		<s:State name="overAndSelected"/>
+		<s:State name="downAndSelected"/>
+		<s:State name="disabledAndSelected"/>
+	</s:states>
+	<s:Group alpha.disabled="0.5" alpha.disabledAndSelected="0.5" x="0" y="0">
+		<s:Rect height="15" includeIn="downAndSelected,over,overAndSelected,upAndSelected" radiusX="3" visible.downAndSelected="false" visible.overAndSelected="false" visible.upAndSelected="false" width="15" x.downAndSelected="0.5" x.over="0.5" x.overAndSelected="0.5" x.upAndSelected="0.5" y.downAndSelected="0.5" y.over="0.5" y.overAndSelected="0.5" y.upAndSelected="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#C6C6C6"/>
+			</s:stroke>
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#F8F8F8" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#E2E2E2" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+			<s:filters>
+				<s:GlowFilter alpha="1.0" blurX="2" blurY="2" color="#60C8FD" inner="false" knockout="false" quality="2" strength="10"/>
+			</s:filters>
+		</s:Rect>
+		<s:Rect height="15" includeIn="downAndSelected,overAndSelected" radiusX="3" visible.downAndSelected="false" width="15" x="0.5" x.downAndSelected="0.5" y="0.5" y.downAndSelected="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#C6C6C6"/>
+			</s:stroke>
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#F8F8F8" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#E2E2E2" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+			<s:filters>
+				<s:GlowFilter alpha="1.0" blurX="2" blurY="2" color="#60C8FD" inner="false" knockout="false" quality="2" strength="10"/>
+			</s:filters>
+		</s:Rect>
+		<s:Rect height="15" includeIn="disabled,disabledAndSelected,down,downAndSelected,over,up,upAndSelected" radiusX="3" visible.disabledAndSelected="false" visible.downAndSelected="false" visible.over="false" width="15" x.disabled="0.5" x.disabledAndSelected="0.5" x.down="0.5" x.downAndSelected="0.5" x.over="0.5" x.up="0.5" x.upAndSelected="0.5" y.disabled="0.5" y.disabledAndSelected="0.5" y.down="0.5" y.downAndSelected="0.5" y.over="0.5" y.up="0.5" y.upAndSelected="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#C6C6C6"/>
+			</s:stroke>
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#F8F8F8" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#E2E2E2" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+		<s:Rect height="15" includeIn="disabledAndSelected,downAndSelected" radiusX="3" visible.disabledAndSelected="false" width="15" x="0.5" y="0.5" x.disabledAndSelected="0.5" y.disabledAndSelected="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#C6C6C6"/>
+			</s:stroke>
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#F8F8F8" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#E2E2E2" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+		<s:Rect height="15" includeIn="disabledAndSelected" radiusX="3" width="15" x="0.5" y="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#C6C6C6"/>
+			</s:stroke>
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#F8F8F8" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#E2E2E2" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+		<s:Path data="M 3.5 6.5 l 2 2 l 6 -7" includeIn="upAndSelected, overAndSelected, downAndSelected, disabledAndSelected" x="1" y="3">
+			<s:stroke>
+				<s:SolidColorStroke caps="square" weight="2" color="#CC0000"/>
+			</s:stroke>
+		</s:Path>
+	</s:Group>
+	<s:RichText alpha.disabled="0.5" alpha.disabledAndSelected="0.5" id="labelDisplay" textAlign="start" verticalAlign="middle" x="20" y="3" color="#333333" tabStops="S0" fontFamily="Arial"/>
+</s:Skin>

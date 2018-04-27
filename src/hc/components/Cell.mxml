@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%">
+	<fx:Metadata>
+		[Style(name="borderColor", inherit="no", type="unit")]
+		[Style(name="fillColor", inherit="no", type="unit")]
+	</fx:Metadata>
+	<fx:Declarations> 
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			private var _paddingLeft:Number = 5;
+			[Bindable]
+			private var _paddingRight:Number = 5;
+			[Bindable]
+			private var _label:String = "";
+			[Bindable]
+			private var _textAlign:String ="right";
+			
+			public function get textAlign():String
+			{
+				return _textAlign;
+			}
+			[Inspectable(category="General", enumeration="left,center,right", defaultValue="right")]
+			public function set textAlign(value:String):void
+			{
+				_textAlign = value;
+			}
+			
+			public function get paddingLeft():Number
+			{
+				return _paddingLeft;
+			}
+			public function set paddingLeft(value:Number):void
+			{
+				_paddingLeft = value;
+			}
+			
+			public function get paddingRight():Number
+			{
+				return _paddingRight;
+			}
+			public function set paddingRight(value:Number):void
+			{
+				_paddingRight = value;
+			}
+
+			public function get label():String
+			{
+				return _label;
+			}
+
+			public function set label(value:String):void
+			{
+				_label = value;
+			}
+			
+			/**
+			 * 如果父类采用CellLayout，可以使用此放法设置元素位置，分别是第几行，第几列，跨几行，跨几列
+			 * 如果输入的数组长度是2，则默认不跨行不跨列
+			 */
+			public function set cellPosition(v:Array):void{
+				var row:int = v[0];
+				var col:int = v[1];
+				var rowSpan:int = 1;
+				var colSpan:int = 1;
+				if(v.length>2){
+					rowSpan = v[2];
+				}
+				if(v.length>3){
+					colSpan = v[3];
+				}
+				this.top = 'row' + row + ':0';
+				this.left = 'col' + col + ':0';
+				this.bottom = 'row' + (row+rowSpan-1) + ':0';
+				this.right = 'col' + (col+colSpan-1) + ':0';
+			}
+
+		]]>
+	</fx:Script>
+	<s:Rect left="-1" top="-1" right="0" bottom="0">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="{this.getStyle('borderColor')}" joints="miter" miterLimit="4" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:SolidColor color="{this.getStyle('fillColor')}"/>
+		</s:fill>
+	</s:Rect>
+	<s:Label text="{_label}" width="100%" height="100%" paddingLeft="{_paddingLeft}" verticalAlign="middle" paddingRight="{_paddingRight}" textAlign="{_textAlign}"/>
+</s:Group>

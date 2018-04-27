@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("hc.components.PopupWindow")]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			
+			protected function closeGroup_clickHandler(event:MouseEvent):void
+			{
+				this.hostComponent.close();
+			}
+			
+			protected function moveArea_mouseDownHandler(event:MouseEvent):void
+			{
+				winGroup.startDrag();
+			}
+			
+			protected function moveArea_mouseUpHandler(event:MouseEvent):void
+			{
+				winGroup.stopDrag();
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<!-- SkinParts
+	name=title, type=spark.components.Label, required=true
+	name=closeGroup, type=spark.components.Group, required=true
+	-->
+	
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="disabled"/> 
+	</s:states>
+	
+	<!--全屏覆盖黑色，半透明-->
+	<s:Rect width="100%" height="100%" alpha="0.4">
+		<s:fill>
+			<s:SolidColor color="#000000"/>
+		</s:fill>
+	</s:Rect>
+	
+	<!--窗口-->
+	<s:Group id="winGroup" width="{this.hostComponent.contentWidth+10}"  height="{this.hostComponent.contentHeight + 32 + 5}" horizontalCenter="0" verticalCenter="0">
+		<!--蓝色背景-->
+		<s:Rect height="100%" radiusX="4" width="100%">
+			<s:fill>
+				<s:SolidColor color="0x3892D3"/>
+				<!--
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#0576A9" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#056E9E" ratio="0.054901960784313725"/>
+					<s:GradientEntry alpha="1.0" color="#034060" ratio="0.34901960784313724"/>
+				</s:LinearGradient>
+				-->
+			</s:fill>
+			<s:filters>
+				<s:GlowFilter alpha="0.8" blurX="8" blurY="8" color="#000000" inner="false" knockout="false" quality="2" strength="1"/>
+			</s:filters>
+		</s:Rect>
+		
+		<!--标题背景
+		<s:BitmapImage smooth="true" source="@Embed('/assets/icon/popupwin_titleBg.jpg')" left="0" top="0" right="0" height="32"/>
+		-->
+		
+		<!--标题-->
+		<s:Label id="titleLabel" text="{this.hostComponent.title}" color="#FFFFFF" fontFamily="宋体" fontSize="14" fontWeight="bold" left="10" top="9" verticalAlign="middle" /> 
+		
+		<!--拖拽-->
+		<s:Group id="moveArea" left="0" top="0" right="0" height="32" mouseDown="moveArea_mouseDownHandler(event)" mouseUp="moveArea_mouseUpHandler(event)"/>
+		
+		<!--关闭-->
+		<s:Group id="closeGroup" top="8" right="5" buttonMode="true" mouseChildren="false" alpha="1" click="closeGroup_clickHandler(event)">
+			<!--<s:Label color="#CFDEE5" fontFamily="宋体" fontSize="14" text="关闭" top="2" right="22"/>-->
+			<s:Image top="0" right="0" smooth="true" source="@Embed(source='/assets/icon/popupwin_close.png')"/>
+		</s:Group>
+		
+		<!--白色内容区-->
+		<s:Rect radiusX="0" left="5" top="35" right="5" bottom="5">
+			<s:fill>
+				<s:SolidColor color="#FFFFFF"/>
+			</s:fill>
+		</s:Rect> 
+		
+		<s:Group left="5" top="35" right="5" bottom="5" id="contentGroup"/>
+	</s:Group>
+</s:Skin>

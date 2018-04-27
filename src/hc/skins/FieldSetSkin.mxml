@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+SHINYNET
+Copyright 2011 SHINYNET
+All Rights Reserved.
+
+NOTICE: Shinynet permits you to use, modify, and distribute this file
+in accordance with the terms of the license agreement accompanying it.
+-->
+
+<!--- The default skin class for a ShinyLib FieldSet container.  
+
+@see com.shinynet.shinylib.components.FieldSet
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+		alpha.disabled="0.5" xmlns:ns="library://ns.shinynet.com/flex/shinylib">
+	
+	<fx:Metadata>
+		[HostComponent("hc.components.FieldSet")]
+	</fx:Metadata>
+	
+	<fx:Script fb:purpose="styling">
+	<![CDATA[
+		import hc.util.Util;
+		
+		private var backgroundAlpha:Number;
+		private var backgroundColor:Number;
+		private var borderAlpha:Number;
+		private var borderColor:Number;
+		private var borderVisible:Boolean;
+		private var borderWeight:int;
+		private var cornerRadius:Number;
+		private var gap:Number;
+		
+		/**
+		 *  @private
+		 */
+		override protected function updateDisplayList(unscaledWidth:Number,
+													  unscaledHeight:Number):void
+		{
+			
+			legendDisplay.setStyle("fontSize", getStyle("legendFontSize"));
+			legendDisplay.setStyle("fontFamily", getStyle("legendFontFamily"));
+			legendDisplay.setStyle("color", getStyle("legendFontColor"));
+			
+			backgroundAlpha = getStyle("backgroundAlpha");
+			backgroundColor = getStyle("backgroundColor");
+			borderAlpha = getStyle("borderAlpha");
+			borderColor = getStyle("borderColor");
+			borderVisible = getStyle("borderVisible");
+			borderWeight = getStyle("borderWeight");
+			cornerRadius = getStyle("cornerRadius");
+			gap = getStyle("gap");
+			
+			updateBorder(unscaledWidth, unscaledHeight);
+			updateBackground(unscaledWidth, unscaledHeight);
+			updateContent(unscaledWidth, unscaledHeight);
+			
+			super.updateDisplayList(unscaledWidth, unscaledHeight);
+		}
+		
+		/**
+		 * @private
+		 */
+		private function updateBorder(width:Number, height:Number):void
+		{
+			if (hostComponent.borderStroke)
+			{
+				border.stroke = hostComponent.borderStroke;
+				borderWeight = hostComponent.borderStroke.weight;
+			}
+			
+			if (isNaN(borderWeight))
+				borderWeight = 1;
+			
+			if (!borderVisible)
+				borderWeight = 0;
+			
+			// Don't waste time drawing the border if it's not visible
+			if (borderWeight > 0)
+			{
+				var legendHeight:Number = legendDisplay.getLayoutBoundsHeight(false);
+				
+				border.setLayoutBoundsSize(width, height - legendHeight / 2, false);
+				border.setLayoutBoundsPosition(0, legendHeight / 2, false);
+				border.data = createBorder(width, height - legendHeight / 2);
+				
+				if (!hostComponent.borderStroke)
+				{
+					borderStroke.color = borderColor;
+					borderStroke.alpha = borderAlpha;
+					borderStroke.weight = borderWeight;
+				}
+			}
+			else
+				border.data = null;
+		}
+		
+		/**
+		 * @private
+		 */
+		private function updateBackground(width:Number, height:Number):void
+		{
+			var legendHeight:Number = legendDisplay.getLayoutBoundsHeight(false);
+			
+			background.left = borderWeight;
+			background.right = borderWeight;
+			background.top = legendHeight / 2;
+			background.bottom = borderWeight;
+			
+			if (hostComponent.backgroundFill)
+			{
+				background.fill = hostComponent.backgroundFill;
+			}
+			else
+			{
+				// Push backgroundColor and backgroundAlpha directly.
+				// Handle undefined backgroundColor by hiding the background object.
+				if (isNaN(backgroundColor))
+				{
+					background.visible = false;
+				}
+				else
+				{
+					background.visible = true;
+					bgFill.color = backgroundColor;
+					bgFill.alpha = backgroundAlpha;
+				}
+			}
+			
+			if (background.visible)
+			{
+				background.topLeftRadiusX = background.topLeftRadiusY = 
+				background.topRightRadiusX = background.topRightRadiusY = 
+				background.bottomLeftRadiusX = background.bottomLeftRadiusY = 
+				background.bottomRightRadiusX = background.bottomRightRadiusY =
+				cornerRadius;
+			}
+		}
+		
+		/**
+		 * @private
+		 */
+		private function updateContent(width:Number, height:Number):void
+		{
+			contentGroup.setStyle("left", borderWeight + 5);
+			contentGroup.setStyle("right", borderWeight + 5);
+			contentGroup.setStyle("top", legendDisplay.height + 10);
+			contentGroup.setStyle("bottom", borderWeight + 5);			
+		}
+		
+		/**
+		 * @private
+		 */
+		private function createBorder(width:Number, height:Number):String
+		{
+			var left:Number = 0;
+			var right:Number = width;
+			var top:Number = 0;
+			var bottom:Number = height;
+			
+			var a:Number = cornerRadius * 0.292893218813453;
+			var s:Number = cornerRadius * 0.585786437626905;
+			
+			var path:String = "";
+			
+			path +=  "M " + left + " " + (top + cornerRadius);
+			path += " Q " + left + " " + (top + s) + " " + (left + a) + " " + (top + a);
+			path += " Q " + (left + s) + " " + top + " " + (left + cornerRadius) + " " + top;
+			
+			path += " L " + (legendDisplay.x-gap) + " " + top;
+			path += " M " + (legendDisplay.x+legendDisplay.width+gap) + " " + top;
+			
+			path += " L " + (right - cornerRadius) + " " + top;
+			path += " Q " + (right - s) + " " + top + " " + (right - a) + " " + (top + a);
+			path += " Q " + right + " " + (top + s) + " " + right + " " + (top + cornerRadius);
+			
+			path += " L " + right + " " + (bottom - cornerRadius);
+			path += " Q " + right + " " + (bottom - s) + " " + (right - a) + " " + (bottom - a);
+			path += " Q " + (right - s) + " " + bottom + " " + (right - cornerRadius) + " " + bottom;
+			
+			path += " L " + (left + cornerRadius) + " " + bottom;
+			path += " Q " + (left + s) + " " + bottom + " " + (left + a) + " " + (bottom - a);
+			path += " Q " + left + " " + (bottom - s) + " " + left + " " + (bottom - cornerRadius);
+			
+			path += " L " + left + " " + (top + cornerRadius);
+			
+			return path;			
+		}
+		
+	]]>        
+	</fx:Script>
+	
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="disabled" />
+	</s:states>
+	
+	<s:Rect id="background" left="0" right="0" top="0" bottom="0">
+		<s:fill>
+			<!--- @private -->
+			<s:SolidColor id="bgFill" color="#FFFFFF"/>
+		</s:fill>
+	</s:Rect>
+	<s:Path id="border" left="0" right="0" top="0" bottom="0" includeInLayout="false">
+		<s:stroke>
+			<s:SolidColorStroke id="borderStroke" color="0x000000"/>
+		</s:stroke>
+	</s:Path>
+	
+	<s:Label id="legendDisplay" x="15" maxDisplayedLines="1"/>
+	<s:Group id="contentGroup">
+	</s:Group>
+</s:Skin>

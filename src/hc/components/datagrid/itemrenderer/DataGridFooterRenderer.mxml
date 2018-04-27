@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:GridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							 xmlns:s="library://ns.adobe.com/flex/spark" 
+							 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="26" >
+	<fx:Script>
+		<![CDATA[
+			import hc.util.Util;
+			override public function set label(v:String):void{
+				super.label = v;
+				//数字居右，文本居中
+				if(labelDisplay){
+					var num:Number = parseFloat(v);
+					if(isNaN(num)){
+						labelDisplay.setStyle('textAlign','center');
+					}
+					else{
+						labelDisplay.setStyle('textAlign','right');
+					}
+				}
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Group width="100%" height="100%" horizontalCenter="0" verticalCenter="0">
+		<s:Line width="100%" y="0">
+			<s:stroke>
+				<s:SolidColorStroke color="0x96aac8" weight="1" caps="square" />
+			</s:stroke>
+		</s:Line>
+		<s:Rect left="0" right="0" top="1" bottom="0">
+			<s:fill>
+				<s:SolidColor color="#dce7f1"/>
+			</s:fill>
+		</s:Rect>
+		<s:Label id="labelDisplay" left="5" top="0" right="5" bottom="0" verticalAlign="middle" 
+				 textAlign="right" fontFamily="微软雅黑" fontWeight="bold"/>
+	</s:Group>
+</s:GridItemRenderer>

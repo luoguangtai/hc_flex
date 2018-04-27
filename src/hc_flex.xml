@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentPackage>
+<!-- components -->
+<component id="Button" class="hc.components.Button"/>
+<component id="ImageButton" class="hc.components.ImageButton"/>
+<component id="FieldSet" class="hc.components.FieldSet"/>
+<component id="StepProgress" class="hc.components.StepProgress"/>
+<component id="MessageTip" class="hc.components.MessageTip"/>
+<component id="MessageDialog" class="hc.components.MessageDialog"/>
+<component id="IFrame" class="hc.flexiframe.IFrame"/>
+<component id="Cell" class="hc.components.Cell"/>
+<component id="PopupWindow" class="hc.components.PopupWindow"/>
+<component id="WeekChooser" class="hc.components.WeekChooser"/>
+<component id="Tree" class="hc.components.Tree"/>
+<component id="TreeLazy" class="hc.components.TreeLazy"/>
+<component id="CheckTree" class="hc.components.CheckTree"/>
+
+<!-- layout -->
+<component id="CellLayout" class="hc.layouts.CellLayout"/>
+
+<!-- FORM -->
+<component id="Form" class="hc.components.form.Form"/>
+<component id="FormItem" class="hc.components.form.FormItem"/>
+<component id="TextInput" class="hc.components.form.TextInput"/>
+<component id="Hidden" class="hc.components.form.Hidden"/>
+<component id="TextArea" class="hc.components.form.TextArea"/>
+<component id="DateField" class="hc.components.form.DateField"/>
+<component id="ComboBox" class="hc.components.form.ComboBox"/>
+<component id="ComboBoxTree" class="hc.components.form.ComboBoxTree"/>
+<component id="ComboBoxTreeLazy" class="hc.components.form.ComboBoxTreeLazy"/>
+<component id="ComboBoxCheckTree" class="hc.components.form.ComboBoxCheckTree"/>
+<component id="RadioButton" class="hc.components.form.RadioButton"/>
+<component id="CheckBox" class="hc.components.form.CheckBox"/>
+<component id="RadioButtonGroup" class="hc.components.form.RadioButtonGroup"/>
+<component id="CheckBoxGroup" class="hc.components.form.CheckBoxGroup"/>
+<component id="NumericStepper" class="hc.components.form.NumericStepper"/>
+
+<!-- toolbarButton -->
+<component id="Toolbar" class="hc.components.toolbar.Toolbar"/>
+<component id="ToolbarButton" class="hc.components.toolbar.ToolbarButton"/>
+<component id="ToolbarAddButton" class="hc.components.toolbar.AddButton"/>
+<component id="ToolbarAuditButton" class="hc.components.toolbar.AuditButton"/>
+<component id="ToolbarCancelButton" class="hc.components.toolbar.CancelButton"/>
+<component id="ToolbarDeleteButton" class="hc.components.toolbar.DeleteButton"/>
+<component id="ToolbarDetailButton" class="hc.components.toolbar.DetailButton"/>
+<component id="ToolbarEditButton" class="hc.components.toolbar.EditButton"/>
+<component id="ToolbarExportButton" class="hc.components.toolbar.ExportButton"/>
+<component id="ToolbarImportButton" class="hc.components.toolbar.ImportButton"/>
+<component id="ToolbarInvalidButton" class="hc.components.toolbar.InvalidButton"/>
+<component id="ToolbarIssueButton" class="hc.components.toolbar.IssueButton"/>
+<component id="ToolbarPrintButton" class="hc.components.toolbar.PrintButton"/>
+<component id="ToolbarPrintPreviewButton" class="hc.components.toolbar.PrintPreviewButton"/>
+<component id="ToolbarQueryButton" class="hc.components.toolbar.QueryButton"/>
+<component id="ToolbarRefreshButton" class="hc.components.toolbar.RefreshButton"/>
+<component id="ToolbarReportButton" class="hc.components.toolbar.ReportButton"/>
+<component id="ToolbarSaveButton" class="hc.components.toolbar.SaveButton"/>
+<component id="ToolbarSettingButton" class="hc.components.toolbar.SettingButton"/>
+
+<!-- actionButton -->
+<component id="PrimaryButton" class="hc.components.actionButton.PrimaryButton"/>
+<component id="WarningButton" class="hc.components.actionButton.WarningButton"/>
+<component id="AccessoryButton" class="hc.components.actionButton.AccessoryButton"/>
+
+<!-- DataGrid -->
+<component id="PageBar" class="hc.components.datagrid.PageBar"/>
+<component id="DataGrid" class="hc.components.datagrid.DataGrid"/>
+<component id="DataGridColumn" class="hc.components.datagrid.DataGridColumn"/>
+<component id="AdvancedDataGrid" class="hc.components.datagrid.AdvancedDataGrid"/>
+<component id="AdvancedDataGridColumn" class="hc.components.datagrid.AdvancedDataGridColumn"/>
+</componentPackage>

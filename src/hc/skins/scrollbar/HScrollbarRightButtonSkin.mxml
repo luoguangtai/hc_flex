@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark">
+	<fx:Metadata><![CDATA[
+    	[HostComponent("spark.components.Button")]
+    ]]></fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect height="14" width="17" x="0.5" y="0.5" visible.down="false" visible.disabled="false">
+		<s:stroke>
+			<s:SolidColorStroke color="#5380D0" color.over="#C6C6C6" color.up="#C1C1C1" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:SolidColor color="#FFFFFF" color.down="#DEEBFF" color.over="#F9F9F9" color.up="#EAEAEA"/>
+		</s:fill>
+	</s:Rect>
+	<s:Rect height="15" includeIn="down" width="12" x="1.5" y="1.5" visible="false">
+		<s:stroke>
+			<s:LinearGradientStroke rotation="90">
+				<s:GradientEntry alpha="0.25" color="#5380D0" ratio="0"/>
+				<s:GradientEntry alpha="0" color="#5380D0" ratio="1"/>
+			</s:LinearGradientStroke>
+		</s:stroke>
+	</s:Rect>
+	<s:Path x="12" y="4" data="M 4 0 L 7.5 7 0 7 Z" rotation="90"
+			visible.disabled="false"
+			visible.down="false"
+			x.up="12" y.up="4">
+		<s:fill>
+			<s:SolidColor color="#4E6290" color.over="#C6C6C6" color.up="#ADADAD"/>
+		</s:fill>
+	</s:Path>
+	<s:Rect height="17" includeIn="disabled,down" width="14" x="0.5" y="0.5" alpha.disabled="0.5">
+		<s:stroke>
+			<s:SolidColorStroke color="#C1C1C1" weight="1"/>
+		</s:stroke>
+		<s:fill>
+			<s:SolidColor color="#EAEAEA"/>
+		</s:fill>
+	</s:Rect>
+	<s:Path data="M 4 0 L 7.5 7 L 0 7 Z" rotation="90" includeIn="disabled,down" x="12" y="4" alpha.disabled="0.5">
+		<s:fill>
+			<s:SolidColor color="#ADADAD"/>
+		</s:fill>
+	</s:Path>
+</s:Skin>

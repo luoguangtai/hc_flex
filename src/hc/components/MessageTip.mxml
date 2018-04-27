@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="350" height="60">
+	<fx:Script>
+		<![CDATA[
+			import mx.core.FlexGlobals;
+			import mx.events.EffectEvent;
+			import mx.managers.PopUpManager;
+			
+			[Bindable]
+			private var _text:String;
+			
+			private var _type:String = '1';//1--成功  2--错误
+			
+			public static function success(text:String):void{
+				show(text, '1');
+			}
+			
+			public static function error(text:String):void{
+				show(text, '2');
+			}
+			
+			public static function warning(text:String):void{
+				show(text, '3');
+			}
+			
+			public static function info(text:String):void{
+				show(text, '4');
+			}
+			
+			private static function show(text:String, type:String):void{
+				var win:MessageTip = new MessageTip();
+				win._text = text;
+				win._type = type;
+				//成功，绿色
+				if(type=='1'){
+					win.color1.color = 0xeefad2;
+					win.color2.color = 0xdeebc2;
+					win.stroke1.color = 0x7aa229;
+				}
+				//失败，红色
+				else if(type=='2'){
+					win.color1.color = 0xffe8e8;
+					win.color2.color = 0xffcfcf;
+					win.stroke1.color = 0xff0000;
+				}
+				//警告，黄色
+				else if(type=='3'){
+					win.color1.color = 0xFFDD00;
+					win.color2.color = 0xFFDD00;
+					win.stroke1.color = 0xf58220;
+				}
+				//信息，蓝色
+				else if(type=='4'){
+					win.color1.color = 0xafdfe4;
+					win.color2.color = 0x94d6da;
+					win.stroke1.color = 0x102b6a;
+				}
+				
+				PopUpManager.addPopUp(win, Sprite(FlexGlobals.topLevelApplication), true);
+				PopUpManager.centerPopUp(win);
+				win.fade1.play([win]);
+			}
+			
+			protected function fade2_effectEndHandler(event:EffectEvent):void
+			{
+				PopUpManager.removePopUp(this);
+			}
+			
+			protected function fade1_effectEndHandler(event:EffectEvent):void
+			{
+				if(_type=='1' || _type=='4'){
+					setTimeout(hideMe, 600);
+				}
+				else{
+					setTimeout(hideMe, 1200);
+				}
+			}
+			
+			private function hideMe():void{
+				fade2.play([this]);
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:Fade id="fade1" duration="400" alphaFrom="0" alphaTo="1" effectEnd="fade1_effectEndHandler(event)"/>
+		<s:Fade id="fade2" duration="400" alphaFrom="1" alphaTo="0" effectEnd="fade2_effectEndHandler(event)"/>
+	</fx:Declarations>
+	
+	<s:Rect width="100%" height="100%">
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry id="color1" color="0xeefad2" ratio="0"/>
+				<s:GradientEntry id="color2" color="0xdeebc2" ratio="1"/>
+			</s:LinearGradient>
+		</s:fill>
+		<s:stroke>
+			<s:SolidColorStroke id="stroke1" color="0x7aa229"/>
+		</s:stroke>
+	</s:Rect>
+	
+	<s:Label text="{_text}" left="2" top="2" right="2" bottom="2" verticalAlign="middle" textAlign="center" color="0x577433"  fontSize="16" fontFamily="微软雅黑"/>
+</s:Group>

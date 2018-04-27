@@ -1,0 +1,293 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace hc "http://flex.hc.org";
+
+s|Application
+{
+	fontSize: 13px; 
+	fontFamily: 宋体;
+}
+mx|ToolTip{
+	font-size: 18px; 
+	font-style: normal;
+	font-weight: normal;
+}
+s|Scroller
+{
+	skinClass:ClassReference("hc.skins.scrollbar.ScrollerSkin");
+}
+s|VScrollBar
+{
+	skinClass:ClassReference("hc.skins.scrollbar.VScrollbarSkin");
+}
+s|HScrollBar
+{
+	skinClass:ClassReference("hc.skins.scrollbar.HScrollbarSkin");
+}
+
+/**hcComponents**/
+hc|Button
+{
+	skinClass: ClassReference("hc.skins.ButtonSkin"); 
+} 
+hc|FieldSet
+{
+	cornerRadius    : 0;
+	gap             : 5;
+	skinClass : ClassReference("hc.skins.FieldSetSkin");
+	borderColor: #A0A0A0;
+	borderWeight:1;
+	legendFontColor:#828282;
+	legendFontFamily:微软雅黑;
+	legendFontSize:14;
+}
+hc|StepProgress
+{
+	stepLIconUnSelected: Embed(source="assets/icon/step_gray_l.png");
+	stepCIconUnSelected: Embed(source="assets/icon/step_gray_c.png");	
+	stepRIconUnSelected: Embed(source="assets/icon/step_gray_r.png");
+	stepLIconSelected: Embed(source="assets/icon/step_blue_l.png");
+	stepCIconSelected: Embed(source="assets/icon/step_blue_c.png");
+	stepRIconSelected: Embed(source="assets/icon/step_blue_r.png");
+}
+hc|PopupWindow
+{
+	skinClass:ClassReference("hc.skins.PopupWindowSkin");
+}
+hc|MessageDialog
+{
+	MessageDialogImgQuestion: Embed(source="assets/icon/alert_questionbig.png");
+	MessageDialogImgWarning: Embed(source="assets/icon/alert_attentionbig.png");	
+	MessageDialogImgInfo: Embed(source="assets/icon/alert_infobig.png");
+	MessageDialogImgOk: Embed(source="assets/icon/alert_okbig.png");
+	MessageDialogImgError: Embed(source="assets/icon/alert_wrongbig.png");
+	skinClass:ClassReference("hc.skins.MessageDialogSkin");
+}
+hc|Cell
+{
+	borderColor:#cccccc;
+	fillColor:#fbfbfb;	
+}
+hc|Tree
+{
+	contentBackgroundAlpha:0;
+	borderColor: #afb4b4;
+	fontSize: 13px;
+}
+hc|TreeLazy
+{
+	contentBackgroundAlpha:0;
+	borderColor: #afb4b4;
+	fontSize: 13px;
+}
+hc|ComboBoxCheckTree
+{
+	skinClass: ClassReference("hc.skins.ComboBoxCheckTreeSkin");
+}
+
+/**hcForm**/
+hc|FormItem
+{
+	skinClass:ClassReference("hc.skins.FormItemSkin");
+	requiredIndicatorSource:Embed(source="assets/icon/RequiredIndicator.png");
+	errorIndicatorSource:Embed(source="assets/icon/alert_warnning.png");
+}	
+hc|TextInput
+{
+	skinClass:ClassReference("hc.skins.TextInputSkin");
+}
+hc|ComboBox
+{
+	skinClass:ClassReference("hc.skins.ComboBoxSkin")
+}
+hc|CheckBox
+{
+	skinClass:ClassReference("hc.skins.CheckBoxSkin");
+}
+hc|RadioButton
+{
+	skinClass:ClassReference("hc.skins.RadioButtonSkin");
+}
+hc|ComboBoxTree
+{
+	skinClass: ClassReference("hc.skins.ComboBoxTreeSkin");
+}
+hc|ComboBoxTreeLazy
+{
+	skinClass: ClassReference("hc.skins.ComboBoxTreeSkin");
+}
+
+/**hcToolbar**/
+hc|Toolbar
+{
+	skinClass:ClassReference("hc.skins.ToolbarSkin");
+}
+hc|ToolbarButton
+{
+	skinClass: ClassReference("hc.skins.ToolbarButtonSkin");
+}
+hc|ToolbarAddButton
+{
+	icon: Embed(source="assets/icon/btn_add.png");
+} 
+
+hc|ToolbarAuditButton
+{
+	icon: Embed(source="assets/icon/btn_audit.png");
+} 
+
+hc|ToolbarCancelButton
+{
+	icon: Embed(source="assets/icon/btn_cancel.png");
+} 
+
+hc|ToolbarDeleteButton
+{
+	icon: Embed(source="assets/icon/btn_delete.png");
+} 
+
+hc|ToolbarDetailButton
+{
+	icon: Embed(source="assets/icon/btn_detail.png");
+} 
+
+hc|ToolbarEditButton
+{
+	icon: Embed(source="assets/icon/btn_edit.png");
+}
+
+hc|ToolbarExportButton
+{
+	icon: Embed(source="assets/icon/btn_export.png");
+}
+
+hc|ToolbarImportButton
+{
+	icon: Embed(source="assets/icon/btn_import.png");
+}
+
+hc|ToolbarInvalidButton
+{
+	icon: Embed(source="assets/icon/btn_invalid.png");
+}
+
+hc|ToolbarIssueButton
+{
+	icon: Embed(source="assets/icon/btn_issue.png");
+}
+
+hc|ToolbarPrintButton
+{
+	icon: Embed(source="assets/icon/btn_print.png");
+}
+
+hc|ToolbarPrintPreviewButton
+{
+	icon: Embed(source="assets/icon/btn_printPreview.png");
+}
+
+hc|ToolbarQueryButton
+{
+	icon: Embed(source="assets/icon/btn_query.png");
+}
+
+hc|ToolbarRefreshButton
+{
+	icon: Embed(source="assets/icon/btn_refresh.png");
+}
+
+hc|ToolbarReportButton
+{
+	icon: Embed(source="assets/icon/btn_report.png");
+}
+
+hc|ToolbarSaveButton
+{
+	icon: Embed(source="assets/icon/btn_save.png");
+}
+
+hc|ToolbarSettingButton
+{
+	icon: Embed(source="assets/icon/btn_setting.png");
+}
+
+/**hcActionButton**/
+hc|PrimaryButton
+{
+	skinClass: ClassReference("hc.skins.ButtonBlueSkin")
+}
+hc|WarningButton
+{
+	skinClass: ClassReference("hc.skins.ButtonRedSkin")
+}
+hc|AccessoryButton
+{
+	skinClass: ClassReference("hc.skins.ButtonGraySkin")
+}
+
+/**hcDataGrid**/
+hc|PageBar
+{
+	pageFirstIcon: Embed(source="assets/icon/page/page-first.gif");
+	pagePrevIcon: Embed(source="assets/icon/page/page-prev.gif");
+	pageNextIcon: Embed(source="assets/icon/page/page-next.gif");
+	pageLastIcon: Embed(source="assets/icon/page/page-last.gif");
+}
+hc|DataGrid
+{
+	skinClass:ClassReference("hc.skins.DataGridSkin");
+	alternatingRowColors:#FFFFFF,#F5F5F5;
+	borderColor:#afb4b4;
+	borderVisible:true;
+}
+
+mx|AdvancedDataGridHeaderRenderer
+{
+	color: #4f5555;
+	fontSize:13;
+}
+mx|AdvancedDataGridGroupItemRenderer
+{
+	textAlign:left;
+}
+
+hc|AdvancedDataGrid
+{
+	alternatingItemColors: #FFFFFF,#F5F5F5;
+	headerColors: #dce7f1,#e6eef4;
+	rollOverColor: #CEDBEF;
+	borderColor: #afb4b4;
+	borderVisible:true;
+	selectionColor: #A8C6EE;
+	horizontalGridLines:true;
+	horizontalGridLineColor:#e1e1e1;
+	verticalGridLines:true;
+	verticalGridLineColor: #e1e1e1;
+	textAlign:center;
+	verticalAlign:middle;
+}
+
+mx|Grid
+{
+	borderStyle:solid;
+	borderColor:#afb4b4;
+	horizontalGap:-1;
+	verticalGap:-1;
+	paddingLeft:-1;
+	paddingTop:-1;
+	paddingRight:-1;
+	paddingBottom:-1;
+}
+mx|GridItem{
+	borderStyle:solid;
+	horizontalAlign:center;
+	verticalAlign:middle;
+	paddingTop:-1;
+	paddingBottom:-1;
+	paddingRight:-1;
+	paddingLeft:-2;
+	borderColor:#c8c8c8;
+}
+
+

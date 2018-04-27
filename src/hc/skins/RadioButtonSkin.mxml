@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" xmlns:d="http://ns.adobe.com/fxg/2008/dt">
+	<fx:Metadata><![CDATA[
+		[HostComponent("spark.components.RadioButton")]
+	]]></fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+		<s:State name="upAndSelected"/>
+		<s:State name="overAndSelected"/>
+		<s:State name="downAndSelected"/>
+		<s:State name="disabledAndSelected"/>
+	</s:states>
+	<s:RichText alpha.disabled="0.5" alpha.disabledAndSelected="0.5" color="#333333" fontFamily="Arial" id="labelDisplay" tabStops="S0 S50" textAlign="start" x="18" y="4"/>
+	<s:Group x="0" y="0" alpha.disabledAndSelected="0.5" alpha.disabled="0.5">
+		<s:Ellipse height="15" width="15" x="0.5" y="0.5">
+			<s:stroke>
+				<s:SolidColorStroke color="#AFAFAF"/>
+			</s:stroke>
+			<s:fill>
+				<s:SolidColor color="#F9F9F9"/>
+			</s:fill>
+		</s:Ellipse>
+		<s:Ellipse height="11" width="11" x="2.5" y="2.5" visible.upAndSelected="false" visible.overAndSelected="false" visible.downAndSelected="false" visible.disabledAndSelected="false">
+			<s:fill>
+				<s:LinearGradient rotation="270">
+					<s:GradientEntry alpha="1.0" color="#D1D1D1" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#FFFFFF" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+			<s:stroke>
+				<s:SolidColorStroke caps="none" color="#CCCCCC" joints="miter" miterLimit="4" weight="1"/>
+			</s:stroke>
+		</s:Ellipse>
+		<s:Ellipse height="11" width="11" x="2.5" y="2.5" visible.over="false" visible.down="false" visible.disabled="false" visible.up="false">
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry alpha="1.0" color="#FFF6F5" ratio="0"/>
+					<s:GradientEntry alpha="1.0" color="#FF725F" ratio="0.49019607843137253"/>
+					<s:GradientEntry alpha="1.0" color="#FF0000" ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+			<s:stroke>
+				<s:SolidColorStroke caps="none" color="#CC0000" joints="miter" miterLimit="4" weight="1"/>
+			</s:stroke>
+		</s:Ellipse>
+	</s:Group>
+</s:Skin>

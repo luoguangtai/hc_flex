@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="hc.components.WeekChooser"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="assets/icon/alert_warningbig.png" sourcePath="assets/icon/alert_warningbig.png"/>
+    <resourceEntry destPath="assets/icon/btn_detail.png" sourcePath="assets/icon/btn_detail.png"/>
+    <resourceEntry destPath="assets/icon/btn_audit.png" sourcePath="assets/icon/btn_audit.png"/>
+    <resourceEntry destPath="assets/icon/alert_attention.png" sourcePath="assets/icon/alert_attention.png"/>
+    <resourceEntry destPath="assets/icon/btn_printPreview.png" sourcePath="assets/icon/btn_printPreview.png"/>
+    <resourceEntry destPath="assets/icon/btn_primary.png" sourcePath="assets/icon/btn_primary.png"/>
+    <resourceEntry destPath="assets/icon/page/page-first.gif" sourcePath="assets/icon/page/page-first.gif"/>
+    <resourceEntry destPath="assets/icon/btn_cancel.png" sourcePath="assets/icon/btn_cancel.png"/>
+    <resourceEntry destPath="assets/icon/btn_query.png" sourcePath="assets/icon/btn_query.png"/>
+    <resourceEntry destPath="assets/icon/btn_import.png" sourcePath="assets/icon/btn_import.png"/>
+    <resourceEntry destPath="assets/icon/icon_textInput.png" sourcePath="assets/icon/icon_textInput.png"/>
+    <resourceEntry destPath="assets/icon/btn_report.png" sourcePath="assets/icon/btn_report.png"/>
+    <resourceEntry destPath="assets/icon/alert_wrong.png" sourcePath="assets/icon/alert_wrong.png"/>
+    <resourceEntry destPath="design.xml" sourcePath="design.xml"/>
+    <resourceEntry destPath="assets/icon/icon_checkBox.png" sourcePath="assets/icon/icon_checkBox.png"/>
+    <resourceEntry destPath="assets/icon/icon_close.png" sourcePath="assets/icon/icon_close.png"/>
+    <resourceEntry destPath="assets/icon/alert_infobig.png" sourcePath="assets/icon/alert_infobig.png"/>
+    <resourceEntry destPath="assets/icon/step_blue_c.png" sourcePath="assets/icon/step_blue_c.png"/>
+    <resourceEntry destPath="assets/icon/btn_important.png" sourcePath="assets/icon/btn_important.png"/>
+    <resourceEntry destPath="assets/icon/alert_ok.png" sourcePath="assets/icon/alert_ok.png"/>
+    <resourceEntry destPath="assets/icon/btn_setting.png" sourcePath="assets/icon/btn_setting.png"/>
+    <resourceEntry destPath="assets/icon/RequiredIndicator.png" sourcePath="assets/icon/RequiredIndicator.png"/>
+    <resourceEntry destPath="assets/icon/btn_refresh.png" sourcePath="assets/icon/btn_refresh.png"/>
+    <resourceEntry destPath="assets/icon/page/page.png" sourcePath="assets/icon/page/page.png"/>
+    <resourceEntry destPath="assets/icon/btn_save.png" sourcePath="assets/icon/btn_save.png"/>
+    <resourceEntry destPath="assets/icon/alert_info.png" sourcePath="assets/icon/alert_info.png"/>
+    <resourceEntry destPath="assets/icon/btn.png" sourcePath="assets/icon/btn.png"/>
+    <resourceEntry destPath="assets/icon/popupwin_close.png" sourcePath="assets/icon/popupwin_close.png"/>
+    <resourceEntry destPath="assets/icon/alert_okbig.png" sourcePath="assets/icon/alert_okbig.png"/>
+    <resourceEntry destPath="assets/icon/page/page-next.gif" sourcePath="assets/icon/page/page-next.gif"/>
+    <resourceEntry destPath="assets/icon/btn_add.png" sourcePath="assets/icon/btn_add.png"/>
+    <resourceEntry destPath="defaults.css" sourcePath="defaults.css"/>
+    <resourceEntry destPath="assets/icon/page/page-prev.gif" sourcePath="assets/icon/page/page-prev.gif"/>
+    <resourceEntry destPath="assets/icon/btn_close.png" sourcePath="assets/icon/btn_close.png"/>
+    <resourceEntry destPath="assets/icon/step_gray_r.png" sourcePath="assets/icon/step_gray_r.png"/>
+    <resourceEntry destPath="assets/icon/step_gray_l.png" sourcePath="assets/icon/step_gray_l.png"/>
+    <resourceEntry destPath="assets/icon/btn_issue.png" sourcePath="assets/icon/btn_issue.png"/>
+    <resourceEntry destPath="assets/icon/icon_comboBox.png" sourcePath="assets/icon/icon_comboBox.png"/>
+    <resourceEntry destPath="assets/icon/icon_dateField.png" sourcePath="assets/icon/icon_dateField.png"/>
+    <resourceEntry destPath="assets/icon/btn_invalid.png" sourcePath="assets/icon/btn_invalid.png"/>
+    <resourceEntry destPath="assets/icon/icon_textArea.png" sourcePath="assets/icon/icon_textArea.png"/>
+    <resourceEntry destPath="assets/icon/flex-iframe-logo-16.png" sourcePath="assets/icon/flex-iframe-logo-16.png"/>
+    <resourceEntry destPath="assets/icon/step_blue_r.png" sourcePath="assets/icon/step_blue_r.png"/>
+    <resourceEntry destPath="assets/icon/step_blue_l.png" sourcePath="assets/icon/step_blue_l.png"/>
+    <resourceEntry destPath="assets/icon/btn_warning.png" sourcePath="assets/icon/btn_warning.png"/>
+    <resourceEntry destPath="assets/icon/btn_edit.png" sourcePath="assets/icon/btn_edit.png"/>
+    <resourceEntry destPath="assets/icon/step_gray_c.png" sourcePath="assets/icon/step_gray_c.png"/>
+    <resourceEntry destPath="assets/icon/btn_export.png" sourcePath="assets/icon/btn_export.png"/>
+    <resourceEntry destPath="assets/icon/btn_delete.png" sourcePath="assets/icon/btn_delete.png"/>
+    <resourceEntry destPath="assets/icon/alert_warnning.png" sourcePath="assets/icon/alert_warnning.png"/>
+    <resourceEntry destPath="assets/icon/alert_wrongbig.png" sourcePath="assets/icon/alert_wrongbig.png"/>
+    <resourceEntry destPath="assets/icon/alert_questionbig.png" sourcePath="assets/icon/alert_questionbig.png"/>
+    <resourceEntry destPath="assets/icon/btn_print.png" sourcePath="assets/icon/btn_print.png"/>
+    <resourceEntry destPath="assets/icon/icon_radioButton.png" sourcePath="assets/icon/icon_radioButton.png"/>
+    <resourceEntry destPath="assets/icon/alert_errorbig.png" sourcePath="assets/icon/alert_errorbig.png"/>
+    <resourceEntry destPath="assets/icon/alert_attentionbig.png" sourcePath="assets/icon/alert_attentionbig.png"/>
+    <resourceEntry destPath="assets/icon/page/page-last.gif" sourcePath="assets/icon/page/page-last.gif"/>
+  </includeResources>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="hc_flex.xml" namespace="http://flex.hc.org"/>
+  </namespaceManifests>
+</flexLibProperties>

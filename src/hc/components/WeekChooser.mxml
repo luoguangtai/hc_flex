@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="210"
+		 creationComplete="init(event)">
+	<fx:Metadata>
+		[Event(name="change", type="flash.events.Event")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import hc.util.DateUtil;
+			import hc.util.Util;
+			
+			import mx.controls.DateChooser;
+			import mx.core.FlexGlobals;
+			import mx.events.CalendarLayoutChangeEvent;
+			import mx.events.FlexEvent;
+			import mx.formatters.DateFormatter;
+			import mx.managers.PopUpManager;
+			
+			/**
+			 * 开始时间
+			 */
+			public var startTime:String;
+			
+			/**
+			 * 结束时间
+			 */
+			public var endTime:String;
+			
+			/**
+			 * 文本框文字
+			 */
+			[Bindable]
+			public var labText:String = "";
+			
+			/**
+			 * 日期选择控件
+			 */
+			private var _dc:DateChooser = new DateChooser();
+			
+			/**
+			 * 日期弹出的父容器
+			 */
+			private var _popParent:DisplayObject;
+			
+			/**
+			 * 日期选择控件是否弹出
+			 */
+			private var _isShow:Boolean = false;
+			
+			/**
+			 * 日期格式化
+			 */
+			private var _dateFormatter:DateFormatter = new DateFormatter();
+			private var _dateFormatter2:DateFormatter = new DateFormatter();
+			
+			/** 一个周中的任意一天 格式YYYY-MM-DD */
+			private var _weekOneDay:String;
+			
+			public function get weekOneDay():String
+			{
+				return _weekOneDay;
+			}
+			
+			public function set weekOneDay(v:String):void
+			{
+				_weekOneDay = v;
+				//日期设置
+				setDate(DateUtil.parse(_weekOneDay));
+			}
+			/**
+			 * 初始化控件
+			 */
+			protected function init(event:FlexEvent):void
+			{
+				_dateFormatter.formatString = "YYYYMMDD";
+				_dateFormatter2.formatString = "YYYY年MM月DD日";
+				
+				_dc.monthNames = ["一","二","三","四","五","六","七","八","九","十","十一","十二"];
+				_dc.monthSymbol = "月";
+				_dc.yearSymbol="年";
+				_dc.dayNames = ["日","一","二","三","四","五","六"];
+				_dc.addEventListener(CalendarLayoutChangeEvent.CHANGE, dcChange);
+				
+//				var selOneDate:Date = new Date();
+//				if(weekOneDay != null){
+//					selOneDate = DateUtil.parse(weekOneDay);
+//				}
+//				//初始化日期
+//				setDate(selOneDate);
+			}
+			/**
+			 * 显示日期选择控件
+			 */
+			protected function showDC():void
+			{
+				if(_popParent == null){
+					_popParent = FlexGlobals.topLevelApplication as DisplayObject;
+				}
+				
+				if(!_isShow){
+					PopUpManager.addPopUp(_dc, _popParent , false);
+					PopUpManager.centerPopUp(_dc);
+					
+					var px:Point = this.localToGlobal(new Point(this.width,0));
+					_dc.x = px.x;
+					_dc.y = px.y;
+					
+					//延迟添加舞台点击监听，防止还没弹出就调用了
+					callLater(addListener);
+					_isShow = true;
+				}else{
+					hiddenDC();
+				}
+			}
+			
+			/**
+			 * 添加监听（舞台任意位置点击则隐藏日期选择控件）
+			 */
+			private function addListener():void{
+				_popParent.addEventListener(MouseEvent.CLICK,hiddenDC);
+			}
+			
+			/**
+			 * 隐藏日期选择控件
+			 */
+			private function hiddenDC(e:Event = null):void{
+				PopUpManager.removePopUp(_dc);
+				_popParent.removeEventListener(MouseEvent.CLICK,hiddenDC);
+				_isShow = false;
+			}
+			
+			/**
+			 * 日期选择完毕
+			 */
+			private function dcChange(event:CalendarLayoutChangeEvent):void{
+				// 获取当前选中的日期，再根据当前日期是周几取得这星期的第一天和最后一天
+				var currentDate:Date = DateChooser(event.target).selectedDate;
+				setDate(currentDate);
+				
+				var e:Event = new Event(Event.CHANGE);
+				dispatchEvent(e);
+				
+				hiddenDC();
+			}
+			
+			/**
+			 * 日期设置
+			 */
+			public function setDate(currentDate:Date):void{
+				// 获取日期，再根据日期是周几取得这星期的第一天和最后一天
+				var date1:Date = new Date(currentDate.getTime());
+				var date2:Date = new Date(currentDate.getTime());
+				var distinceDay:Number = currentDate.getDay();
+				if(distinceDay > 0)
+				{
+					date1.date -= distinceDay - 1;
+					date2.date = currentDate.date + (7 - distinceDay);
+				}
+				else
+				{
+					date1.date -= 6;
+				}
+				_dc.selectedDate=date1;
+				_dc.selectedRanges = [{rangeStart: date1, rangeEnd: date2}];
+				
+				startTime = _dateFormatter.format(date1);
+				endTime = _dateFormatter.format(date2);
+				labText = _dateFormatter2.format(date1) + "-" + _dateFormatter2.format(date2);
+			}
+			
+		]]>
+	</fx:Script>
+	<s:TextInput id="lab" text="{labText}" click="showDC()" width="100%" editable="false"/>
+</s:Group>
